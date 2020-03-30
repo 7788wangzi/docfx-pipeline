@@ -6,7 +6,7 @@
           "files": [
             "**.csproj"
           ],
-          "src": "C:\\Files\\Code\\Docfx-test\\DocRule\\DocRule"
+          "src": ".."
         }
       ],
       "dest": "api",
