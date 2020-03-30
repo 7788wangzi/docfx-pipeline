@@ -1,0 +1,20 @@
+{
+  "tagRules": [
+    {
+      "tagNames": [ "a", "img", "H2", "ol", "ul", "li", "table" ],
+      "relation": "In",
+      "behavior": "Warning",
+      "messageFormatter": "Content: {1}. Please do not use {0} tag, use corresponding markdown instead.",
+      "customValidatorContractName": null,
+      "openingTagOnly": false
+    },
+    {
+      "tagNames": [ "a" ],
+      "behavior": "Warning",
+      "messageFormatter": "Please do not use 'onclick' in HTML link.",
+      "customValidatorContractName": "should_not_contain_onclick",
+      "openingTagOnly": true
+    }
+  ]
+
+}
