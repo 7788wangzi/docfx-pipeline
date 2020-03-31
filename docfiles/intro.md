@@ -8,4 +8,4 @@ This file is the first markdown file.
 
 <H2>Test invalid heading</H2>
 
-[Google](www.google.com)
+[Google](https://www.google.com)
