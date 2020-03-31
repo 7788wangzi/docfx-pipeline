@@ -16,16 +16,27 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "docfiles/2-test-trigger-azdo-pipeline.md",
+      "output": {
+        ".html": {
+          "relative_path": "docfiles/2-test-trigger-azdo-pipeline.html",
+          "hash": "c1S2OiNivDKG3jyW8qqOjw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "log_codes": [
-        "invalid-markdown-tag",
-        "InvalidFileLink"
+        "invalid-markdown-tag"
       ],
       "type": "Conceptual",
       "source_relative_path": "docfiles/intro.md",
       "output": {
         ".html": {
           "relative_path": "docfiles/intro.html",
-          "hash": "JoKSqA1uPYYZxUOZq2gqtw=="
+          "hash": "k4gM3A6yvIpoMydR/cW0eA=="
         }
       },
       "is_incremental": false,
@@ -46,7 +57,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 2,
+          "total_file_count": 3,
           "skipped_file_count": 0
         }
       }
