@@ -1,20 +1,45 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Use DocFx to validate markdown
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Create a `md.style` file in same folder with docfx.json file, rules could be configured in md.style file to validate the markdown files under docfiles folder.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+If we don't allow markdown content using html tags, we could add following rule to the md.style file:
+```
+    {
+      "tagNames": [ "a", "img", "H2", "ol", "ul", "li", "table" ],
+      "relation": "In",
+      "behavior": "Warning",
+      "messageFormatter": "Content: {1}. Please do not use {0} tag, use corresponding markdown instead.",
+      "customValidatorContractName": null,
+      "openingTagOnly": false
+    }
+```
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+If to use custom rules, reference [Validate markdown file](https://dotnet.github.io/docfx/tutorial/intro_markdown_lite.html)
+
+## docfx.json file
+
+Check the format of docfx.json file at [docfx user manual](https://dotnet.github.io/docfx/tutorial/docfx.exe_user_manual.html)
+
+## To Continuous Integrate (CI) with Azure DevOps
+```
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-2019'
+
+steps:
+- powershell: |
+    choco install docfx -y
+    docfx docfx.json
+    if ($lastexitcode -ne 0){
+      throw ("Error generating document")
+    }
+  displayName: "Docfx build"
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: _site
+    artifactName: site
+```
