@@ -17,3 +17,8 @@ steps:
       throw ("Error generating document")
     }
   displayName: "Docfx build"
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: _site
+    artifactName: site
