@@ -1,47 +1,30 @@
-{
-  "metadata": [
-    {
-      "src": [
-        {
-          "files": [
-            "**.csproj"
-          ],
-          "src": ".."
-        }
-      ],
-      "dest": "api",
-      "disableGitFeatures": false,
-      "disableDefaultFilter": false
-    }
-  ],
+{ 
   "build": {
     "content": [
       {
         "files": [
-          "DocRule/**.yml",
-          "DocRule/index.md"
+          "docfiles/**/*.yml"
         ]
       },
       {
         "files": [
-          "DocRule/**.md",
-          "DocRule/**/toc.yml",
+          "docfiles/**/*.md",
           "toc.yml",
-          "*.md"
+          "**/*.md"
         ]
       }
     ],
     "resource": [
       {
         "files": [
-          "images/**"
+          "docfiles/images/**"
         ]
       }
     ],
     "overwrite": [
       {
         "files": [
-          "DocRule/**.md"
+          "docfiles/**/*.md"
         ],
         "exclude": [
           "obj/**",
