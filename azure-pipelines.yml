@@ -22,3 +22,4 @@ steps:
   inputs:
     pathToPublish: _site
     artifactName: site
+    zipAfterPublish: true
